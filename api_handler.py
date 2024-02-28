@@ -7,7 +7,7 @@ def send_query_get_response(client,user_question,assistant_id):
     thread = client.beta.threads.create()
     thread_id = thread.id
 
-    user_question=user_question+ ' and tell me which file are the top results based on your similarity search (an example of can be you can refer to the course material titled "Present Value Relations" in the file "Lec 2-3.pdf" under slides 20-34.)'
+    user_question=user_question+ ' and tell me which file are the top results based on your similarity search'
 
     # Send the user's question to the thread
     client.beta.threads.messages.create(

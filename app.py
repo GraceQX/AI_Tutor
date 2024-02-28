@@ -1,9 +1,6 @@
-# Built-in modules
 import io
 import os
 import subprocess
-
-# Third-party modules
 import streamlit as st
 from PIL import Image
 from openai import OpenAI
@@ -14,28 +11,26 @@ from api_handler import send_query_get_response
 from chat_gen import generate_html
 from file_upload import upload_files_to_assistant, attach_files_to_assistant, check_and_upload_files
 
-logo=Image.open('logo.png')
-sb_logo=Image.open('sb_logo.png')
-
+# logo=Image.open('logo.png')
+# sb_logo=Image.open('sb_logo.png')
 
 c1, c2 = st.columns([0.9, 3.2])
 
 with c1:
     st.caption('')
     st.caption('')
-    st.image(logo,width=120)
+    # st.image(logo,width=120)
 
 with c2:
 
-    st.title('EduMentor : An AI-Enhanced Tutoring System')
+    st.title('AI Tutor Prototype')
 
 
-# RAG Function Description
-st.markdown("## AI Tutor Description")
-rag_description = """
-EduMentor leverages the cutting-edge RAG (Retrieval-Augmented Generation) function to provide in-depth, contextually rich answers to complex educational queries. This AI-driven approach combines extensive knowledge retrieval with dynamic response generation, offering students a deeper, more nuanced understanding of subjects and fostering a more interactive, exploratory learning environment.
-"""
-st.markdown(rag_description)
+# st.markdown("## AI Tutor Description")
+# rag_description = """
+# EduMentor leverages the cutting-edge RAG (Retrieval-Augmented Generation) function to provide in-depth, contextually rich answers to complex educational queries. This AI-driven approach combines extensive knowledge retrieval with dynamic response generation, offering students a deeper, more nuanced understanding of subjects and fostering a more interactive, exploratory learning environment.
+# """
+# st.markdown(rag_description)
 
 # OpenAI API Key Input
 api_key = st.text_input(label='Enter your OpenAI API Key', type='password')
@@ -52,9 +47,9 @@ if api_key:
     st.divider()
 
     # Sidebar for Additional Features
-    st.sidebar.header('EduMentor: AI-Tutor')
-    st.sidebar.image(logo,width=120)
-    st.sidebar.caption('Made by D')
+    st.sidebar.header('AI-Tutor')
+    # st.sidebar.image(logo,width=120)
+    # st.sidebar.caption('Made by D')
     # Adding a button in the sidebar to delete all files from the assistant
     if st.sidebar.button('Delete All Files from Assistant'):
         # Retrieve all file IDs associated with the assistant
