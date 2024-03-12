@@ -2,12 +2,13 @@ from openai import OpenAI
 import time
 
 
-def send_query_get_response(client,user_question,assistant_id):
+def send_query_get_response(client, user_question, assistant_id, in_lecture_mode=False):
     # Create a new thread for the query
     thread = client.beta.threads.create()
     thread_id = thread.id
 
-    user_question=user_question+ ' and tell me which file are the top results based on your similarity search'
+    # user_question=user_question+ ' and tell me which file are the top results based on your similarity search'
+    user_question = user_question + (' In Lecture mode: ' if in_lecture_mode else '')  # 根据 in_lecture_mode 添加回答用词
 
     # Send the user's question to the thread
     client.beta.threads.messages.create(

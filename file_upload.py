@@ -53,3 +53,5 @@ def check_and_upload_files(client, assistant_id):
                 st.warning("Please select at least one file to upload.")
     
     return files_info
+
+ 
